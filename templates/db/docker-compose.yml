@@ -7,6 +7,7 @@ services:
     restart: always
     environment:
       - SOLR_HEAP=2g
+      - LOG4J_FORMAT_MSG_NO_LOOKUPS=true
     volumes:
       - data:/var/solr
       - ./configsets:/var/solr/data/configsets:Z

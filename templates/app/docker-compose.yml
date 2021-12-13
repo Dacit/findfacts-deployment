@@ -12,6 +12,7 @@ services:
       - VIRTUAL_PORT=9000
       - SOLR_HOST=solr
       - SOLR_CONFIGSET=theorydata-$SCHEMA_VERSION
+      - LOG4J_FORMAT_MSG_NO_LOOKUPS=true
     logging:
       driver: syslog
       options:
