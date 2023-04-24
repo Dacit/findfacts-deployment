@@ -383,20 +383,5 @@ server {
 	}
 }
 
-{{ if (and (not $is_https) (exists "/etc/nginx/certs/default.crt") (exists "/etc/nginx/certs/default.key")) }}
-server {
-	server_name {{ $host }};
-	listen {{ $external_https_port }} ssl http2 {{ $default_server }};
-	{{ if $enable_ipv6 }}
-	listen [::]:{{ $external_https_port }} ssl http2 {{ $default_server }};
-	{{ end }}
-	{{ $access_log }}
-	return 500;
-
-	ssl_certificate /etc/nginx/certs/default.crt;
-	ssl_certificate_key /etc/nginx/certs/default.key;
-}
-{{ end }}
-
 {{ end }}
 {{ end }}
