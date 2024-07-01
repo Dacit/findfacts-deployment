@@ -11,7 +11,7 @@ services:
     environment:
       - VIRTUAL_PORT=9000
       - SOLR_HOST=solr
-      - SOLR_CONFIGSET=theorydata-0.4.0
+      - SOLR_CONFIGSET=theorydata-0.5.0
       - LOG4J_FORMAT_MSG_NO_LOOKUPS=true
     logging:
       driver: syslog
